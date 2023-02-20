@@ -8,22 +8,19 @@
  *  
  */
 
-// const playerSelection = getPlayerChoice().toLowerCase;
-// const computerSelection = getComputerChoice().toLowerCase;
-
 function getComputerChoice() {
     let randomNum = randNum();
     let computerChoice = " ";
     
     if (randomNum === 1) {
         computerChoice = "rock";
-        console.log(computerChoice);
+        console.log("Computer chose " + computerChoice);
     } else if (randomNum === 2) {
         computerChoice = "paper";
-        console.log(computerChoice);
+        console.log("Computer chose " + computerChoice);
     } else if (randomNum === 3) {
         computerChoice = "scissors"
-        console.log(computerChoice);
+        console.log("Computer chose " + computerChoice);
     } else {
         console.log("Something went wrong");
     }
@@ -38,15 +35,14 @@ function randNum() {
 }
 
 function getPlayerChoice() {
-    // let playerChoice = prompt("Enter either rock, paper, or scissors: ").toLowerCase;
-    // return playerChoice;
-    return "rock";
+    let playerChoice = prompt("Enter either rock, paper, or scissors: ").toLowerCase();
+    return playerChoice;
 }
 
 function playRound() {
     // call functions to get selections
-    let playerSelection = getPlayerChoice().toLowerCase;
-    let computerSelection = getComputerChoice().toLowerCase;
+    let computerSelection = getComputerChoice().toLowerCase();
+    let playerSelection = getPlayerChoice().toLowerCase();
 
     // win condition messages
     let rockWinsMessage = "Rock beats scissors";
@@ -58,30 +54,36 @@ function playRound() {
 
     // logic for sorting type precedence
     if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
+        if (computerSelection == "paper") {
             console.log(paperWinsMessage + computerWins);
-        } else if (computerSelection === "scissors") {
+        } else if (computerSelection == "scissors") {
             console.log(rockWinsMessage + playerWins);
-        } else if (computerSelection === "rock") {
+        } else if (computerSelection == "rock") {
             console.log(tieMessage);
         }
     } else if (playerSelection === "paper") {
-        if (computerSelection === "rock") {
+        if (computerSelection == "rock") {
             console.log(paperWinsMessage + playerWins);
-        } else if (computerSelection === "scissors") {
+        } else if (computerSelection == "scissors") {
             console.log(scissorsWinMessage + computerWins);
-        } else if (computerSelection === "paper") {
+        } else if (computerSelection == "paper") {
             console.log(tieMessage);
         }
     } else if (playerSelection === "scissors") {
-        if (computerSelection === "rock") {
+        if (computerSelection == "rock") {
             console.log(rockWinsMessage + computerWins);
-        } else if (computerSelection === "paper") {
+        } else if (computerSelection == "paper") {
             console.log(scissorsWinMessage + playerWins);
-        } else if (computerSelection === "scissors") {
+        } else if (computerSelection == "scissors") {
             console.log(tieMessage);
         }
+    } else {
+        console.log("Player selection invalid");
     }
+}
+
+function printGameResult() {
+
 }
 
 function game() {
@@ -90,4 +92,4 @@ function game() {
     }
 }
 
-playRound();
+game();
