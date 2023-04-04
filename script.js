@@ -39,10 +39,10 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-function playRound() {
+function playRound(playerSelection) {
     // call functions to get selections
     let computerSelection = getComputerChoice().toLowerCase();
-    let playerSelection = getPlayerChoice().toLowerCase();
+    // let playerSelection = getPlayerChoice().toLowerCase();
 
     // win condition messages
     let rockWinsMessage = "Rock beats scissors";
@@ -82,14 +82,24 @@ function playRound() {
     }
 }
 
-function printGameResult() {
+const rock = document.querySelector("#rockbtn");
+rock.addEventListener("click", () => {
+    playRound("rock");
+});
+const paper = document.querySelector("#paperbtn");
+paper.addEventListener("click", () => {
+    playRound("paper");
+});
+const scissors = document.querySelector("#scissorsbtn");
+scissors.addEventListener("click", () => {
+    playRound("scissors");
+});
 
-}
+// from console tests
+// function game() {
+//     for (let i=0; i<5; i++) {
+//         playRound();
+//     }
+// }
 
-function game() {
-    for (let i=0; i<5; i++) {
-        playRound();
-    }
-}
-
-game();
+// game();
