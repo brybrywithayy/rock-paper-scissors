@@ -74,7 +74,6 @@ function playRound(playerNum) {
 }
 
 
-
 /*
  * ORIGINAL CONSOLE VERSION
  */
